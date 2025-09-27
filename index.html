@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Dance in Chester | Ballroom & Latin Classes, Tea Dances & Private Lessons">
+  <meta name="description" content="Dance in Chester offers Ballroom & Latin classes, private lessons, wedding dance choreography, and social tea dances. Established in 1974, led by Dawn Daniels. Join us in Chester for expert dance tuition and vibrant social events.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://danceinchester.co.uk/">
+  <meta property="og:title" content="Dance in Chester | Ballroom & Latin Classes, Tea Dances & Private Lessons">
+  <meta property="og:description" content="Join Dance in Chester for expert Ballroom & Latin tuition, private lessons, wedding dance choreography, and friendly social tea dances.">
+  <meta property="og:image" content="https://danceinchester.co.uk/images/dawn-portrait.jpg">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://danceinchester.co.uk/">
+  <meta name="twitter:title" content="Dance in Chester | Ballroom & Latin Classes, Tea Dances & Private Lessons">
+  <meta name="twitter:description" content="Dance in Chester offers expert Ballroom & Latin tuition, private lessons, wedding dance choreography, and regular tea dances in Chester.">
+  <meta name="twitter:image" content="https://danceinchester.co.uk/images/dawn-portrait.jpg">
+
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <title>Dance In Chester</title>
+
+  <!-- Bootstrap CSS (v5) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --plum: #701d75; /* header/footer */
+      --teal: #178f8d; /* buttons and accents */
+      --muted: #6c6c6c;
+      --max-width: 1100px;
+    }
+
+    body{
+      background: #ffffff;
+      color: #222;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    .site-header{
+      background: var(--plum);
+      color: #fff;
+    }
+    .navbar-brand{
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      font-size: 1.35rem;
+    }
+
+    .nav-link{
+      color: rgba(255,255,255,0.95) !important;
+    }
+    .nav-link:hover{ color: #ddd !important; }
+
+    /* Hero Section */
+    #hero {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    #hero h1 {
+      color: #701d75; /* plum purple */
+    }
+
+    .btn-teal {
+      background-color: #008080;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-teal:hover {
+      background-color: #006666;
+    }
+
+    .hero-img {
+      max-width: 350px;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .hero{
+      padding: 3rem 1rem;
+      background: linear-gradient(180deg, rgba(110,43,99,0.03), rgba(110,43,99,0.00));
+      border-bottom: 1px solid #eee;
+    }
+    .hero .lead{
+      font-size: 1.05rem;
+      color: #333;
+    }
+    .hero .cta-phone{
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--teal);
+      color: #fff;
+      border-radius: .5rem;
+      padding: .6rem .85rem;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 6px 14px rgba(23,143,141,0.12);
+    }
+    .hero .cta-phone i{ font-size: 1.1rem; }
+
+    /* Section headings */
+    .section-title{
+      color: var(--plum);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .subtle{
+      color: var(--muted);
+    }
+
+    /* Timetable - make readable on mobile */
+    .timetable .card{
+      border-radius: .6rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    /* Tea dances and classes */
+    .list-plain{ list-style: none; padding-left: 0; }
+    .list-plain li{ margin-bottom: .6rem; }
+
+    /* Contact form */
+    .contact-card{
+      border-radius: .6rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+      padding: 1.25rem;
+    }
+
+    /* Footer */
+    .site-footer{
+      background: var(--plum);
+      color: #fff;
+      padding: 1.6rem 0;
+    }
+    .social a{ color: #fff; font-size: 1.25rem; margin-right: .8rem; opacity: .95; }
+    .social a:hover{ opacity: 1; color: #f8f8f8; }
+
+    /* Small tweaks */
+    .muted-block{ color: #666; }
+    @media(min-width: 992px){
+      .hero{ padding: 4rem 1rem; }
+    }
+
+    .blockquote-footer{
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg container" aria-label="Main navigation">
+      <div class="container-fluid px-0" style="max-width: var(--max-width);">
+        <a class="navbar-brand text-white" href="#top">Dance In Chester</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><i class="fa fa-bars" style="color:#fff"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#timetable">Timetable</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tea-dances">Tea Dances</a></li>
+            <li class="nav-item"><a class="nav-link" href="#classes">Classes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="container" style="max-width: var(--max-width);">
+
+    <!-- HERO -->
+<!-- Hero Section -->
+<section id="hero" class="d-flex align-items-center justify-content-center text-center text-md-start">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Hero Text -->
+       <h1 class="display-4 fw-bold text-center">Dance in Chester</h1>
+      <div class="col-md-4 text-center mt-4 mt-md-0">
+        <img src="images/bruces school of dance logo.png" 
+             class="img-fluid rounded shadow-lg hero-img" 
+             alt="Bruce's School Of Dance, established 1974">
+      </div>
+      <div class="col-md-4 text-center mt-4 mt-md-0">
+        
+        
+        <p class="lead mt-3">
+          In 1974 Jim & Nell Bruce established Bruce's School Of Dance.</p>
+        <p class="lead mt-3">
+          Their daughter <strong class="fw-semibold">Dawn Daniels</strong> carries their passionate tradition of dance excellence forward today.</p>
+        
+        <p class="fw-semibold">Wedding dance specialist. Call today:</p>
+        <a href="tel:07905571515" class="btn btn-teal btn-lg">
+          <i class="fas fa-phone-alt me-2"></i>07905 571515
+        </a>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="col-md-4 text-center mt-4 mt-md-0">
+        <img src="images/dawn-portrait-small.jpg" 
+             class="img-fluid rounded shadow-lg hero-img" 
+             alt="Portrait of Dawn Daniels, professional dance teacher in Chester">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- TIMETABLE -->
+    <section id="timetable" class="py-5 timetable">
+      <div class="row">
+        <div class="col-12 mb-3">
+          <h2 class="section-title">Timetable — SEPTEMBER &amp; OCTOBER 2025</h2>
+          <p class="subtle">Personal Dance Lessons and Classes in and around Chester.</p>
+        </div>
+      </div>
+
+      <div class="row g-3">
+
+        <!-- Tea dances card -->
+        <div class="col-12">
+          <div class="card p-3">
+            <div class="card-body">
+              <h5 class="card-title" style="color:var(--teal);">SUNDAYS — TEA DANCES (Ballroom &amp; Latin)</h5>
+              <p class="mb-1">21st September<br>19th October<br>16th November<br>14th December — Christmas Tea Dance</p>
+              <p><strong>4.00pm–6.00pm</strong> — All dancers welcome, social dance practice, meet with like minded dancers</p>
+              <p>£7.00pp incl tea, coffee, cordial, water, biscuits &amp; some cake. Please book in advance.</p>
+              <p><strong>St Columbas Church Hall</strong>, Plas Newton Ln, Upton by Chester, CH2 1SA<br>Free parking</p>
+              <img src="images/dance-group.jpg" alt="Beginners dance class" class="img-fluid rounded shadow mt-3">
+            </div>
+          </div>
+        </div>
+
+        <!-- Monday Morning Private Lessons -->
+        <div class="col-12 col-md-6">
+          <div class="card p-3">
+            <div class="card-body">
+              <h5 class="card-title" style="color:var(--teal);">MONDAY MORNING — PRIVATE LESSONS</h5>
+              <p>Availability some Tuesday &amp; Wednesday mornings</p>
+              <p><strong>Dates</strong><br>September 8th, 15th, 22nd, 29th<br>October 6th, 13th, 20th, 27th</p>
+              <p>Must be booked in advance — £40.00 per hour for a single dancer or couple</p>
+              <p><strong>The Vernon Institute</strong>, Church Rd, Saughall, CH1 6EN — Free parking</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mondays Beginners -->
+        <div class="col-12  col-md-6">
+          <div class="card p-3">
+            <div class="card-body">
+              <h5 class="card-title" style="color:var(--teal);">MONDAYS — NEW DANCE CLASS (Beginners)</h5>
+              <p><strong>Dates</strong><br>September 8th, 15th, 22nd, 29th<br>October 6th, 13th, 20th, 27th</p>
+              <p><strong>Time:</strong> 7.30pm–8.30pm</p>
+              <p>Learn Waltz, Social Foxtrot, Cha Cha Cha, Jive &amp; Salsa together with deportment &amp; hold.</p>
+              <p>£7.00 pp per class on the door or join in advance £25.00 pp for 4 weeks.</p>
+              <p>Single dancers and couples welcome; a partner cannot be guaranteed but you won't be left on your own.</p>
+              <p><strong>Christleton Parish Hall</strong>, Village Road, Christleton, Nr Chester, CH3 7AS — Free parking</p>
+              
+            </div>
+          </div>
+        </div>
+
+        <!-- Tuesdays Intermediate -->
+        <div class="col-12 col-md-6">
+          <div class="card p-3">
+            <div class="card-body">
+              <h5 class="card-title" style="color:var(--teal);">TUESDAYS — INTERMEDIATE CLASS</h5>
+              <p><strong>Dates</strong><br>September 9th, 16th, 23rd, 30th<br>October 7th, 14th, 21st, 28th</p>
+              <p><strong>Time:</strong> 7.30pm–9.30pm (Lesson 7.30–9.00, Practice 9.00–9.30)</p>
+              <p>Tea, coffee, cordial &amp; biscuits included. £10.00 pp per class.</p>
+              <p>Intermediate level &amp; experienced beginners.</p>
+              <p><strong>Upton Holy Ascension Community Church Hall</strong>, Demage Lane, Upton by Chester, CH2 1EL — Free parking</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thursdays -->
+        <div class="col-12 col-md-6">
+          <div class="card p-3">
+            <div class="card-body">
+              <h5 class="card-title" style="color:var(--teal);">THURSDAYS — BALLROOM &amp; LATIN SOCIAL LESSONS</h5>
+              <p><strong>Dates (Sept/Oct)</strong><br>Sept 4, 11, 18, 25 — Oct 2, 9, 16, 23, 30</p>
+              <p><strong>Times:</strong><br>7.30–8.10pm Beginners<br>8.10–8.20pm Social interval<br>8.20–9.00pm Intermediates<br>9.00–10.30pm Social Dancing</p>
+              <p>£5.00 pp cash on the door to the Committee — Couples only, no booking required</p>
+              <p><strong>The Whitby Club</strong>, Dunkirk Lane/Chester Road, Ellesmere Port, CH65 6QF</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fridays -->
+        <div class="col-12">
+          <div class="card p-3">
+            <div class="card-body">
+              <h5 class="card-title" style="color:var(--teal);">FRIDAYS — MIXED ABILITY (Ballroom &amp; Latin)</h5>
+              <p><strong>Dates</strong><br>September 5, 12, 19, 26 — October 3, 10, 17, 24, 31</p>
+              <p><strong>Time:</strong> 10.00am–12.00pm</p>
+              <p>£7.00 pp per class (payable cash on the door or bank transfer beforehand). Singles and couples welcome.</p>
+              <p>Inclusive of tea/coffee and biscuits.</p>
+              <p><strong>The Enterprise Centre</strong>, The Parade, Blacon, Nr Chester, CH1 1HW — Free parking</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TEA DANCES -->
+    <section id="tea-dances" class="py-5">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title">Tea Dances — Sundays 2025</h2>
+          <p class="subtle">All dancers welcome — Please book places in advance. Contact Dawn on <a href="tel:+447905571515">07905 571515</a></p>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <div class="card p-3">
+            <div class="card-body">
+              <h5 style="color:var(--teal);">Venue & Time</h5>
+              <p><strong>St Columba's Church Hall</strong>, Plas Newton Lane, Upton by Chester, CH2 1SA</p>
+              <p><strong>Time:</strong> 4.00pm–6.00pm</p>
+              <p>£7.00 per person — Payable cash on the door or beforehand by bank transfer (ask for details)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="card p-3">
+            <div class="card-body">
+              <h5 style="color:var(--teal);">Includes</h5>
+              <p>2 hours of Ballroom &amp; Latin Dance</p>
+              <p>Free Parking</p>
+              <p>Refreshments included — Tea, coffee, water, cordial, some cakes &amp; biscuits</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 mt-2">
+          <div class="card p-3">
+            <div class="card-body">
+              <p><strong>Dates:</strong></p>
+              <ul class="list-plain">
+                <li>September 21st</li>
+                <li>October 19th</li>
+                <li>November 16th</li>
+                <li>December 14th</li>
+              </ul>
+              <p>(Christmas Tea Dance — dancers like to bring party food to add to the buffet; bring your own items if you have dietary requirements)</p>
+              <p><em>2026 — Tea Dance dates are booked &amp; will be published soon.</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASSES -->
+    <section id="classes" class="py-5">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title">Classes &amp; Private Lessons</h2>
+          <p class="subtle">One Hour Private Dance Lessons — by prior appointment only</p>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <div class="card contact-card">
+            <h5 style="color:var(--teal);">Private Lessons</h5>
+            <p><strong>Location:</strong> The Saughall Vernon Institute, Church Road, Saughall, Near Chester, CH1 6EN</p>
+            <p><strong>Times:</strong> Mondays, Tuesdays, Wednesdays 10.00am–1.00pm; Fridays 3.00pm–7.00pm. Other days/times by arrangement.</p>
+            <p>Private Lessons cost £40.00 per hour. A £10 non-refundable deposit is required to secure a slot. 24 hours notice required to cancel without charge; less than 24 hours incurs the full fee.</p>
+            <p><em>Please contact us to arrange an appointment.</em></p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="card p-3">
+            <h5 style="color:var(--teal);">Classes 2025 (summary)</h5>
+
+            <ul class="list-plain">
+              <li><strong>MONDAY — Beginners Ballroom &amp; Latin:</strong> 7.30pm–8.30pm. Join 4 weeks in September/October for £25.00 each month. Christleton Parish Hall. Contact Dawn 07905 571515.</li>
+              <li><strong>TUESDAY — Intermediate &amp; Experienced Beginners:</strong> Holy Ascension Hall, Upton. 7.30pm–9.00pm plus practice 9.00–9.30pm. £10.00 pp.</li>
+              <li><strong>THURSDAY — Whitby Sports &amp; Social Club (Ellesmere Port):</strong> 7.30pm onwards. £5 pp Couples only (non-members sign in).</li>
+              <li><strong>FRIDAY — Mixed Ability (Blacon Enterprise Centre):</strong> 10.00am–12.00pm. £7.00 pp.</li>
+            </ul>
+
+            <p><strong>Wedding Dance Lessons:</strong> £45.00 per hour or £239 for 6 hours (pre-booked). Payable prior to lessons.</p>
+
+            <p><strong>Christmas at Craxton Dinner Dance — Wed 10th Dec 2025</strong><br>
+            McDonald Craxton Wood Hotel — £53.00 pp (non-refundable £20 deposit by 10th Oct; final balance 10th Nov). Contact Dawn 07905 571515 to register interest.</p>
+
+            <p>Also available: Social Events, Workshops, Team-builds, Fundraiser dances, Bespoke choreography.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Recommendation Section -->
+<section id="recommendation" class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Photo -->
+      <div class="col-md-5 mb-4 mb-md-0 text-center">
+        <img src="images/dawn-and-paul.jpg" 
+             alt="Dawn Daniels dancing with former World Champion Paul Bottomley" 
+             class="img-fluid rounded shadow">
+      </div>
+      
+      <!-- Text -->
+      <div class="col-md-7">
+        <h3 style="color:var(--teal);">Why Choose Dawn?</h3>
+        <blockquote class="blockquote" style="padding-bottom: 30px;">
+          <p class="mb-4">
+            “Dawn is a former high level international competitor and has trained in Ballroom, Salsa and Tango with some of the world's top dance coaches.
+          </p>
+          <p class="mb-4">Dawn is a prominent member of the Dance Matrix, Club Dance Holidays, HF Holidays and Warner Holidays teaching teams, and is qualified and recognised by the British and World Dance Councils as a professional teacher and adjudicator.</p>
+          <p class="mb-4">She teaches with a gentle, confidence building and supportive approach, underpinned by considerable experience and expertise, but one that is always first and foremost fun.”</p>
+        </blockquote>
+        <footer class="blockquote-footer">
+          Paul Bottomley, Former World Dance Champion<br>Four times World and European Supreme Champion<br>Director of The Dance Matrix
+        </footer>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-5">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="section-title">Contact Us</h2>
+          <p class="subtle">Email: <a href="mailto:dance@danceinchester.co.uk">dance@danceinchester.co.uk</a> &nbsp; &nbsp; Call: <a href="tel:+447905571515">07905 571515</a></p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6">
+          <div class="contact-card">
+            <h5 style="color:var(--teal);">Send us a message</h5>
+            <form id="contactForm" novalidate>
+              <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input id="name" class="form-control" type="text" required>
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input id="email" class="form-control" type="email" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="phone">Phone</label>
+                <input id="phone" class="form-control" type="tel" required>
+                <div class="invalid-feedback">Please enter a contact phone number.</div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="message">Message</label>
+                <textarea id="message" class="form-control" rows="5" required></textarea>
+                <div class="invalid-feedback">Please enter a message.</div>
+              </div>
+
+              <div class="d-flex gap-2">
+                <button type="submit" class="btn" style="background:var(--teal); color:#fff;">Send message</button>
+                <button type="reset" class="btn btn-outline-secondary">Reset</button>
+              </div>
+
+              <div id="formAlert" class="mt-3" style="display:none;"></div>
+            </form>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="p-3">
+            <h5 style="color:var(--teal);">Other ways to contact</h5>
+            <p class="mb-1"><i class="fa fa-phone me-2"></i> <a href="tel:+447905571515">07905 571515</a></p>
+            <p class="mb-1"><i class="fa fa-envelope me-2"></i> <a href="mailto:dance@danceinchester.co.uk">dance@danceinchester.co.uk</a></p>
+            <hr>
+            <p>If you'd like a quick booking for a private lesson, please call Dawn on the number above. Lessons require prior appointment and a deposit to secure the slot.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer mt-5">
+    <div class="container" style="max-width: var(--max-width);">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-0"><strong>Dance In Chester</strong> — continuing a tradition since 1974.</p>
+        </div>
+        <div class="col-md-6 text-md-end text-start">
+          <div class="social">
+            <!-- Replace '#' with actual social links -->
+            <a href="https://www.facebook.com/people/Bruces-School-of-Dance-Est-1974/100063472062954/#" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/DawnDancingDawn" aria-label="X (Twitter)" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/danceinchester/" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCW2DJdGK4CkcRSmoKDtYHbw" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Collapse navbar when clicking a nav link (mobile)
+    document.querySelectorAll('.nav-link[href^="#"]').forEach(function(anchor){
+      anchor.addEventListener('click', function(e){
+        var nav = document.querySelector('.navbar-collapse');
+        if(nav.classList.contains('show')){
+          // bootstrap collapse
+          var bsCollapse = bootstrap.Collapse.getInstance(nav) || new bootstrap.Collapse(nav);
+          bsCollapse.hide();
+        }
+      });
+    });
+
+    // Contact form handling: client-side validation + simple mailto fallback.
+    (function(){
+      const form = document.getElementById('contactForm');
+      const alertBox = document.getElementById('formAlert');
+
+      function showAlert(message, type = 'success'){
+        alertBox.style.display = 'block';
+        alertBox.className = ''; // reset
+        alertBox.classList.add('alert', type === 'success' ? 'alert-success' : 'alert-danger');
+        alertBox.innerText = message;
+      }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        // Built-in validation
+        const valid = form.checkValidity();
+        if(!valid){
+          form.classList.add('was-validated');
+          showAlert('Please complete the form correctly and try again.', 'error');
+          return;
+        }
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Prepare a mailto as a fallback (server backend not provided)
+        const subject = encodeURIComponent('Contact from Dance In Chester website — ' + name);
+        const bodyLines = [
+          'Name: ' + name,
+          'Email: ' + email,
+          'Phone: ' + phone,
+          '',
+          'Message:',
+          message
+        ];
+        const body = encodeURIComponent(bodyLines.join('\\n'));
+
+        // Try opening a mailto link
+        const mailto = 'mailto:dance@danceinchester.co.uk?subject=' + subject + '&body=' + body;
+
+        // Show success to user and open mailto
+        showAlert('Thank you — opening your email client to send the message. If nothing happens, please email dance@danceinchester.co.uk directly or call 07905 571515.', 'success');
+
+        // Slight delay so user can read success message, then open mailto
+        setTimeout(function(){
+          window.location.href = mailto;
+          form.reset();
+          form.classList.remove('was-validated');
+        }, 700);
+      });
+    })();
+
+    // Optional: add "Back to top" on long pages (keyboard accessible)
+    (function(){
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'btn';
+      btn.innerHTML = '<i class="fa fa-chevron-up"></i>';
+      btn.setAttribute('aria-label', 'Back to top');
+      btn.style.position = 'fixed';
+      btn.style.right = '16px';
+      btn.style.bottom = '18px';
+      btn.style.display = 'none';
+      btn.style.background = 'var(--plum)';
+      btn.style.color = '#fff';
+      btn.style.borderRadius = '50%';
+      btn.style.width = '44px';
+      btn.style.height = '44px';
+      btn.style.zIndex = 9999;
+      document.body.appendChild(btn);
+
+      btn.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 400) btn.style.display = 'block'; else btn.style.display = 'none';
+      });
+    })();
+  </script>
+</body>
+</html>
