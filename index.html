@@ -31,131 +31,371 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
     :root{
       --plum: #701d75; /* header/footer */
       --teal: #178f8d; /* buttons and accents */
       --muted: #6c6c6c;
-      --max-width: 1100px;
+      --max-width: 1200px;
+      --plum-light: rgba(112, 29, 117, 0.1);
+      --teal-light: rgba(23, 143, 141, 0.1);
+    }
+
+    * {
+      transition: all 0.3s ease;
     }
 
     body{
       background: #ffffff;
       color: #222;
-      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
       scroll-behavior: smooth;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Playfair Display", serif;
     }
 
     /* Header */
     .site-header{
-      background: var(--plum);
+      background: linear-gradient(135deg, var(--plum) 0%, #8a2d8f 100%);
       color: #fff;
+      box-shadow: 0 4px 20px rgba(112, 29, 117, 0.2);
+      padding: 1rem 0;
     }
     .navbar-brand{
       font-weight: 700;
       letter-spacing: 0.5px;
-      font-size: 1.35rem;
+      font-size: 1.5rem;
+      font-family: "Playfair Display", serif;
+      padding-left: 20px;
+    }
+
+    @media (min-width: 992px) {
+      .navbar-brand {
+        padding-left: 0;
+      }
     }
 
     .nav-link{
       color: rgba(255,255,255,0.95) !important;
+      font-weight: 500;
+      padding: 0.5rem 1rem !important;
+      border-radius: 0.5rem;
+      margin: 0 0.25rem;
     }
-    .nav-link:hover{ color: #ddd !important; }
+    .nav-link:hover{ 
+      color: #fff !important;
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    /* Burger menu styling */
+    .navbar-toggler {
+      border: none !important;
+      padding: 0.5rem 0.75rem;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    .navbar-toggler:focus,
+    .navbar-toggler:active,
+    .navbar-toggler:focus-visible {
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    .navbar-toggler-icon {
+      background-image: none !important;
+      width: auto;
+      height: auto;
+    }
+
+    .navbar-toggler-icon i {
+      font-size: 1.5rem;
+      color: #fff;
+    }
 
     /* Hero Section */
     #hero {
-      padding: 80px 0;
-      background: #fff;
+      padding: 100px 0 80px;
+      background: linear-gradient(135deg, rgba(112, 29, 117, 0.05) 0%, rgba(23, 143, 141, 0.05) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(112, 29, 117, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(23, 143, 141, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    #hero > * {
+      position: relative;
+      z-index: 1;
     }
 
     #hero h1 {
-      color: #701d75; /* plum purple */
+      color: var(--plum);
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
     }
 
     .btn-teal {
-      background-color: #008080;
+      background: linear-gradient(135deg, var(--teal) 0%, #1ba5a3 100%);
       color: #fff;
       border: none;
+      padding: 0.85rem 2rem;
+      font-weight: 600;
+      border-radius: 50px;
+      box-shadow: 0 8px 20px rgba(23, 143, 141, 0.3);
+      transition: all 0.3s ease;
     }
 
     .btn-teal:hover {
-      background-color: #006666;
+      background: linear-gradient(135deg, #1ba5a3 0%, var(--teal) 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(23, 143, 141, 0.4);
+      color: #fff;
     }
 
     .hero-img {
-      max-width: 350px;
+      max-width: 100%;
       height: auto;
       object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
     }
 
-    .hero{
-      padding: 3rem 1rem;
-      background: linear-gradient(180deg, rgba(110,43,99,0.03), rgba(110,43,99,0.00));
-      border-bottom: 1px solid #eee;
+    .hero-img:hover {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    .logo-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-container:hover {
+      transform: translateY(-5px);
+    }
+
+    .logo-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .hero {
+      padding: 4rem 1rem;
     }
     .hero .lead{
-      font-size: 1.05rem;
-      color: #333;
+      font-size: 1.15rem;
+      color: #444;
+      line-height: 1.8;
     }
-    .hero .cta-phone{
-      display: inline-flex;
-      align-items: center;
-      gap: .6rem;
-      background: var(--teal);
-      color: #fff;
-      border-radius: .5rem;
-      padding: .6rem .85rem;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 6px 14px rgba(23,143,141,0.12);
-    }
-    .hero .cta-phone i{ font-size: 1.1rem; }
 
     /* Section headings */
     .section-title{
       color: var(--plum);
       font-weight: 700;
       margin-bottom: 1rem;
-    }
-    .subtle{
-      color: var(--muted);
+      font-size: 2.5rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.5rem;
     }
 
-    /* Timetable - make readable on mobile */
-    .timetable .card{
-      border-radius: .6rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--plum) 100%);
+      border-radius: 2px;
+    }
+
+    .subtle{
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    /* Cards */
+    .timetable .card,
+    .contact-card {
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      border: none;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      background: white;
+    }
+
+    .timetable .card:hover,
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+
+    .card-title {
+      font-family: "Playfair Display", serif;
+      font-weight: 600;
+      margin-bottom: 1rem;
     }
 
     /* Tea dances and classes */
-    .list-plain{ list-style: none; padding-left: 0; }
-    .list-plain li{ margin-bottom: .6rem; }
+    .list-plain{ 
+      list-style: none; 
+      padding-left: 0; 
+    }
+    .list-plain li{ 
+      margin-bottom: .8rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .list-plain li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: bold;
+    }
 
-    /* Contact form */
-    .contact-card{
-      border-radius: .6rem;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-      padding: 1.25rem;
+    /* Section backgrounds */
+    section {
+      position: relative;
+    }
+
+    section:nth-child(even) {
+      background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(112, 29, 117, 0.02) 100%);
+    }
+
+    /* Recommendation section */
+    #recommendation {
+      background: linear-gradient(135deg, var(--plum-light) 0%, var(--teal-light) 100%);
+      border-radius: 30px;
+      margin: 3rem 0;
+      padding: 4rem 2rem !important;
+    }
+
+    .blockquote {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #444;
+      border-left: 4px solid var(--teal);
+      padding-left: 2rem;
+      margin: 2rem 0;
+    }
+
+    .blockquote-footer{
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--plum);
+      margin-top: 1.5rem;
     }
 
     /* Footer */
     .site-footer{
-      background: var(--plum);
+      background: linear-gradient(135deg, var(--plum) 0%, #8a2d8f 100%);
       color: #fff;
-      padding: 1.6rem 0;
+      padding: 2.5rem 0;
+      margin-top: 4rem;
     }
-    .social a{ color: #fff; font-size: 1.25rem; margin-right: .8rem; opacity: .95; }
-    .social a:hover{ opacity: 1; color: #f8f8f8; }
+    .social a{ 
+      color: #fff; 
+      font-size: 1.5rem; 
+      margin-right: 1rem; 
+      opacity: .9;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    .social a:hover{ 
+      opacity: 1; 
+      color: #f8f8f8;
+      transform: translateY(-3px) scale(1.1);
+    }
 
-    /* Small tweaks */
-    .muted-block{ color: #666; }
+    /* Form styling */
+    .form-control {
+      border-radius: 10px;
+      border: 2px solid #e0e0e0;
+      padding: 0.75rem 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 0.2rem rgba(23, 143, 141, 0.15);
+    }
+
+    /* Responsive */
     @media(min-width: 992px){
-      .hero{ padding: 4rem 1rem; }
+      .hero{ padding: 5rem 1rem; }
+      #hero h1 {
+        font-size: 4rem;
+      }
     }
 
-    .blockquote-footer{
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #555;
+    @media(max-width: 768px){
+      #hero h1 {
+        font-size: 2.5rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Image enhancements */
+    img.rounded.shadow {
+      border-radius: 15px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important;
     }
   </style>
 
@@ -186,49 +426,62 @@
   <main id="top" class="container" style="max-width: var(--max-width);">
 
     <!-- HERO -->
-<!-- Hero Section -->
-<section id="hero" class="d-flex align-items-center justify-content-center text-center text-md-start">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <!-- Hero Text -->
-       <h1 class="display-4 fw-bold text-center">Dance in Chester</h1>
-      <div class="col-md-4 text-center mt-4 mt-md-0">
-        <img src="images/bruces school of dance logo.png" 
-             class="img-fluid rounded shadow-lg hero-img" 
-             alt="Bruce's School Of Dance, established 1974">
-      </div>
-      <div class="col-md-4 text-center mt-4 mt-md-0">
-        
-        
-        <p class="lead mt-3">
-          In 1974 Jim & Nell Bruce established Bruce's School Of Dance.</p>
-        <p class="lead mt-3">
-          Their daughter <strong class="fw-semibold">Dawn Daniels</strong> carries their passionate tradition of dance excellence forward today.</p>
-        
-        <p class="fw-semibold">Wedding dance specialist. Call today:</p>
-        <a href="tel:07905571515" class="btn btn-teal btn-lg">
-          <i class="fas fa-phone-alt me-2"></i>07905 571515
-        </a>
-      </div>
+    <section id="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Logo - Centered at top -->
+          <div class="col-12 text-center mb-5">
+            <div class="logo-container mx-auto" style="max-width: 400px;">
+              <img src="images/bruces school of dance logo.png" 
+                   class="img-fluid" 
+                   alt="Bruce's School Of Dance, established 1974">
+            </div>
+          </div>
 
-      <!-- Hero Image -->
-      <div class="col-md-4 text-center mt-4 mt-md-0">
-        <img src="images/dawn-portrait-small.jpg" 
-             class="img-fluid rounded shadow-lg hero-img" 
-             alt="Portrait of Dawn Daniels, professional dance teacher in Chester">
+          <!-- Main Title -->
+          <div class="col-12 text-center mb-4">
+            <h1 class="fade-in-up">Dance in Chester</h1>
+            <p class="lead fade-in-up" style="animation-delay: 0.2s;">
+              Continuing a tradition of dance excellence since 1974
+            </p>
+          </div>
+
+          <!-- Content Row -->
+          <div class="col-12 col-lg-6 text-center text-lg-start mb-4 mb-lg-0 fade-in-up" style="animation-delay: 0.3s;">
+            <div class="px-3">
+              <p class="lead">
+                In 1974, <strong>Jim & Nell Bruce</strong> established <strong>Bruce's School Of Dance</strong>.
+              </p>
+              <p class="lead">
+                Their daughter <strong style="color: var(--plum);">Dawn Daniels</strong> carries their passionate tradition of dance excellence forward today.
+              </p>
+              <p class="h5 mt-4 mb-3" style="color: var(--teal);">
+                <i class="fas fa-heart me-2"></i>Wedding Dance Specialist
+              </p>
+              <a href="tel:07905571515" class="btn btn-teal btn-lg mt-2">
+                <i class="fas fa-phone-alt me-2"></i>Call Now: 07905 571515
+              </a>
+            </div>
+          </div>
+
+          <!-- Portrait Image -->
+          <div class="col-12 col-lg-6 text-center fade-in-up" style="animation-delay: 0.4s;">
+            <img src="images/dawn-portrait-small.jpg" 
+                 class="img-fluid hero-img" 
+                 alt="Portrait of Dawn Daniels, professional dance teacher in Chester"
+                 style="max-width: 450px;">
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- TIMETABLE -->
     <section id="timetable" class="py-5 timetable">
       <div class="row">
-        <div class="col-12 mb-3">
-          <h2 class="section-title">Timetable — SEPTEMBER &amp; OCTOBER 2025</h2>
-          <p class="subtle">Personal Dance Lessons and Classes in and around Chester.</p>
+        <div class="col-12 mb-5">
+          <h2 class="section-title text-center text-md-start">Timetable — SEPTEMBER &amp; OCTOBER 2025</h2>
+          <p class="subtle text-center text-md-start">Personal Dance Lessons and Classes in and around Chester.</p>
         </div>
       </div>
 
@@ -236,9 +489,11 @@
 
         <!-- Tea dances card -->
         <div class="col-12">
-          <div class="card p-3">
+          <div class="card p-4">
             <div class="card-body">
-              <h5 class="card-title" style="color:var(--teal);">SUNDAYS — TEA DANCES (Ballroom &amp; Latin)</h5>
+              <h5 class="card-title" style="color:var(--teal); font-size: 1.4rem;">
+                <i class="fas fa-calendar-alt me-2"></i>SUNDAYS — TEA DANCES (Ballroom &amp; Latin)
+              </h5>
               <p class="mb-1">21st September<br>19th October<br>16th November<br>14th December — Christmas Tea Dance</p>
               <p><strong>4.00pm–6.00pm</strong> — All dancers welcome, social dance practice, meet with like minded dancers</p>
               <p>£7.00pp incl tea, coffee, cordial, water, biscuits &amp; some cake. Please book in advance.</p>
@@ -250,9 +505,11 @@
 
         <!-- Monday Morning Private Lessons -->
         <div class="col-12 col-md-6">
-          <div class="card p-3">
+          <div class="card p-4">
             <div class="card-body">
-              <h5 class="card-title" style="color:var(--teal);">MONDAY MORNING — PRIVATE LESSONS</h5>
+              <h5 class="card-title" style="color:var(--teal);">
+                <i class="fas fa-user-graduate me-2"></i>MONDAY MORNING — PRIVATE LESSONS
+              </h5>
               <p>Availability some Tuesday &amp; Wednesday mornings</p>
               <p><strong>Dates</strong><br>September 8th, 15th, 22nd, 29th<br>October 6th, 13th, 20th, 27th</p>
               <p>Must be booked in advance — £40.00 per hour for a single dancer or couple</p>
@@ -263,9 +520,11 @@
 
         <!-- Mondays Beginners -->
         <div class="col-12  col-md-6">
-          <div class="card p-3">
+          <div class="card p-4">
             <div class="card-body">
-              <h5 class="card-title" style="color:var(--teal);">MONDAYS — NEW DANCE CLASS (Beginners)</h5>
+              <h5 class="card-title" style="color:var(--teal);">
+                <i class="fas fa-star me-2"></i>MONDAYS — NEW DANCE CLASS (Beginners)
+              </h5>
               <p><strong>Dates</strong><br>September 8th, 15th, 22nd, 29th<br>October 6th, 13th, 20th, 27th</p>
               <p><strong>Time:</strong> 7.30pm–8.30pm</p>
               <p>Learn Waltz, Social Foxtrot, Cha Cha Cha, Jive &amp; Salsa together with deportment &amp; hold.</p>
@@ -279,9 +538,11 @@
 
         <!-- Tuesdays Intermediate -->
         <div class="col-12 col-md-6">
-          <div class="card p-3">
+          <div class="card p-4">
             <div class="card-body">
-              <h5 class="card-title" style="color:var(--teal);">TUESDAYS — INTERMEDIATE CLASS</h5>
+              <h5 class="card-title" style="color:var(--teal);">
+                <i class="fas fa-trophy me-2"></i>TUESDAYS — INTERMEDIATE CLASS
+              </h5>
               <p><strong>Dates</strong><br>September 9th, 16th, 23rd, 30th<br>October 7th, 14th, 21st, 28th</p>
               <p><strong>Time:</strong> 7.30pm–9.30pm (Lesson 7.30–9.00, Practice 9.00–9.30)</p>
               <p>Tea, coffee, cordial &amp; biscuits included. £10.00 pp per class.</p>
@@ -293,9 +554,11 @@
 
         <!-- Thursdays -->
         <div class="col-12 col-md-6">
-          <div class="card p-3">
+          <div class="card p-4">
             <div class="card-body">
-              <h5 class="card-title" style="color:var(--teal);">THURSDAYS — BALLROOM &amp; LATIN SOCIAL LESSONS</h5>
+              <h5 class="card-title" style="color:var(--teal);">
+                <i class="fas fa-users me-2"></i>THURSDAYS — BALLROOM &amp; LATIN SOCIAL LESSONS
+              </h5>
               <p><strong>Dates (Sept/Oct)</strong><br>Sept 4, 11, 18, 25 — Oct 2, 9, 16, 23, 30</p>
               <p><strong>Times:</strong><br>7.30–8.10pm Beginners<br>8.10–8.20pm Social interval<br>8.20–9.00pm Intermediates<br>9.00–10.30pm Social Dancing</p>
               <p>£5.00 pp cash on the door to the Committee — Couples only, no booking required</p>
@@ -306,9 +569,11 @@
 
         <!-- Fridays -->
         <div class="col-12">
-          <div class="card p-3">
+          <div class="card p-4">
             <div class="card-body">
-              <h5 class="card-title" style="color:var(--teal);">FRIDAYS — MIXED ABILITY (Ballroom &amp; Latin)</h5>
+              <h5 class="card-title" style="color:var(--teal);">
+                <i class="fas fa-music me-2"></i>FRIDAYS — MIXED ABILITY (Ballroom &amp; Latin)
+              </h5>
               <p><strong>Dates</strong><br>September 5, 12, 19, 26 — October 3, 10, 17, 24, 31</p>
               <p><strong>Time:</strong> 10.00am–12.00pm</p>
               <p>£7.00 pp per class (payable cash on the door or bank transfer beforehand). Singles and couples welcome.</p>
@@ -324,17 +589,19 @@
     <!-- TEA DANCES -->
     <section id="tea-dances" class="py-5">
       <div class="row">
-        <div class="col-12">
-          <h2 class="section-title">Tea Dances — Sundays 2025</h2>
-          <p class="subtle">All dancers welcome — Please book places in advance. Contact Dawn on <a href="tel:+447905571515">07905 571515</a></p>
+        <div class="col-12 mb-5">
+          <h2 class="section-title text-center text-md-start">Tea Dances — Sundays 2025</h2>
+          <p class="subtle text-center text-md-start">All dancers welcome — Please book places in advance. Contact Dawn on <a href="tel:+447905571515" style="color: var(--teal); font-weight: 600;">07905 571515</a></p>
         </div>
       </div>
 
       <div class="row g-3">
         <div class="col-12 col-md-6">
-          <div class="card p-3">
+          <div class="card p-4">
             <div class="card-body">
-              <h5 style="color:var(--teal);">Venue & Time</h5>
+              <h5 style="color:var(--teal);">
+                <i class="fas fa-map-marker-alt me-2"></i>Venue & Time
+              </h5>
               <p><strong>St Columba's Church Hall</strong>, Plas Newton Lane, Upton by Chester, CH2 1SA</p>
               <p><strong>Time:</strong> 4.00pm–6.00pm</p>
               <p>£7.00 per person — Payable cash on the door or beforehand by bank transfer (ask for details)</p>
@@ -343,9 +610,11 @@
         </div>
 
         <div class="col-12 col-md-6">
-          <div class="card p-3">
+          <div class="card p-4">
             <div class="card-body">
-              <h5 style="color:var(--teal);">Includes</h5>
+              <h5 style="color:var(--teal);">
+                <i class="fas fa-check-circle me-2"></i>Includes
+              </h5>
               <p>2 hours of Ballroom &amp; Latin Dance</p>
               <p>Free Parking</p>
               <p>Refreshments included — Tea, coffee, water, cordial, some cakes &amp; biscuits</p>
@@ -354,9 +623,11 @@
         </div>
 
         <div class="col-12 mt-2">
-          <div class="card p-3">
+          <div class="card p-4">
             <div class="card-body">
-              <p><strong>Dates:</strong></p>
+              <h5 style="color:var(--teal); margin-bottom: 1rem;">
+                <i class="fas fa-calendar-check me-2"></i>Dates
+              </h5>
               <ul class="list-plain">
                 <li>September 21st</li>
                 <li>October 19th</li>
@@ -374,16 +645,18 @@
     <!-- CLASSES -->
     <section id="classes" class="py-5">
       <div class="row">
-        <div class="col-12">
-          <h2 class="section-title">Classes &amp; Private Lessons</h2>
-          <p class="subtle">One Hour Private Dance Lessons — by prior appointment only</p>
+        <div class="col-12 mb-5">
+          <h2 class="section-title text-center text-md-start">Classes &amp; Private Lessons</h2>
+          <p class="subtle text-center text-md-start">One Hour Private Dance Lessons — by prior appointment only</p>
         </div>
       </div>
 
       <div class="row g-3">
         <div class="col-12 col-md-6">
-          <div class="card contact-card">
-            <h5 style="color:var(--teal);">Private Lessons</h5>
+          <div class="card contact-card p-4">
+            <h5 style="color:var(--teal);">
+              <i class="fas fa-user-graduate me-2"></i>Private Lessons
+            </h5>
             <p><strong>Location:</strong> The Saughall Vernon Institute, Church Road, Saughall, Near Chester, CH1 6EN</p>
             <p><strong>Times:</strong> Mondays, Tuesdays, Wednesdays 10.00am–1.00pm; Fridays 3.00pm–7.00pm. Other days/times by arrangement.</p>
             <p>Private Lessons cost £40.00 per hour. A £10 non-refundable deposit is required to secure a slot. 24 hours notice required to cancel without charge; less than 24 hours incurs the full fee.</p>
@@ -392,8 +665,10 @@
         </div>
 
         <div class="col-12 col-md-6">
-          <div class="card p-3">
-            <h5 style="color:var(--teal);">Classes 2025 (summary)</h5>
+          <div class="card p-4">
+            <h5 style="color:var(--teal);">
+              <i class="fas fa-list-alt me-2"></i>Classes 2025 (summary)
+            </h5>
 
             <ul class="list-plain">
               <li><strong>MONDAY — Beginners Ballroom &amp; Latin:</strong> 7.30pm–8.30pm. Join 4 weeks in September/October for £25.00 each month. Christleton Parish Hall. Contact Dawn 07905 571515.</li>
@@ -415,50 +690,58 @@
     </section>
 
     <!-- Recommendation Section -->
-<section id="recommendation" class="py-5 bg-light">
-  <div class="container">
-    <div class="row align-items-center">
-      
-      <!-- Photo -->
-      <div class="col-md-5 mb-4 mb-md-0 text-center">
-        <img src="images/dawn-and-paul.jpg" 
-             alt="Dawn Daniels dancing with former World Champion Paul Bottomley" 
-             class="img-fluid rounded shadow">
+    <section id="recommendation" class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <!-- Photo -->
+          <div class="col-md-5 mb-4 mb-md-0 text-center">
+            <img src="images/dawn-and-paul.jpg" 
+                 alt="Dawn Daniels dancing with former World Champion Paul Bottomley" 
+                 class="img-fluid rounded shadow"
+                 style="max-width: 100%;">
+          </div>
+          
+          <!-- Text -->
+          <div class="col-md-7">
+            <h3 style="color:var(--plum); font-size: 2.2rem; margin-bottom: 1.5rem;">
+              <i class="fas fa-star me-2" style="color: var(--teal);"></i>Why Choose Dawn?
+            </h3>
+            <blockquote class="blockquote">
+              <p class="mb-4">
+                "Dawn is a former high level international competitor and has trained in Ballroom, Salsa and Tango with some of the world's top dance coaches.
+              </p>
+              <p class="mb-4">Dawn is a prominent member of the Dance Matrix, Club Dance Holidays, HF Holidays and Warner Holidays teaching teams, and is qualified and recognised by the British and World Dance Councils as a professional teacher and adjudicator.</p>
+              <p class="mb-4">She teaches with a gentle, confidence building and supportive approach, underpinned by considerable experience and expertise, but one that is always first and foremost fun."</p>
+            </blockquote>
+            <footer class="blockquote-footer">
+              <strong>Paul Bottomley</strong><br>
+              Former World Dance Champion<br>
+              Four times World and European Supreme Champion<br>
+              Director of The Dance Matrix
+            </footer>
+          </div>
+          
+        </div>
       </div>
-      
-      <!-- Text -->
-      <div class="col-md-7">
-        <h3 style="color:var(--teal);">Why Choose Dawn?</h3>
-        <blockquote class="blockquote" style="padding-bottom: 30px;">
-          <p class="mb-4">
-            “Dawn is a former high level international competitor and has trained in Ballroom, Salsa and Tango with some of the world's top dance coaches.
-          </p>
-          <p class="mb-4">Dawn is a prominent member of the Dance Matrix, Club Dance Holidays, HF Holidays and Warner Holidays teaching teams, and is qualified and recognised by the British and World Dance Councils as a professional teacher and adjudicator.</p>
-          <p class="mb-4">She teaches with a gentle, confidence building and supportive approach, underpinned by considerable experience and expertise, but one that is always first and foremost fun.”</p>
-        </blockquote>
-        <footer class="blockquote-footer">
-          Paul Bottomley, Former World Dance Champion<br>Four times World and European Supreme Champion<br>Director of The Dance Matrix
-        </footer>
-      </div>
-      
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- CONTACT -->
     <section id="contact" class="py-5">
       <div class="row">
-        <div class="col-12">
-          <h2 class="section-title">Contact Us</h2>
-          <p class="subtle">Email: <a href="mailto:dance@danceinchester.co.uk">dance@danceinchester.co.uk</a> &nbsp; &nbsp; Call: <a href="tel:+447905571515">07905 571515</a></p>
+        <div class="col-12 mb-5">
+          <h2 class="section-title text-center text-md-start">Contact Us</h2>
+          <p class="subtle text-center text-md-start">Email: <a href="mailto:dance@danceinchester.co.uk" style="color: var(--teal); font-weight: 600;">dance@danceinchester.co.uk</a> &nbsp; &nbsp; Call: <a href="tel:+447905571515" style="color: var(--teal); font-weight: 600;">07905 571515</a></p>
         </div>
       </div>
 
       <div class="row g-4">
         <div class="col-12 col-md-6">
-          <div class="contact-card">
-            <h5 style="color:var(--teal);">Send us a message</h5>
+          <div class="contact-card p-4">
+            <h5 style="color:var(--teal);">
+              <i class="fas fa-envelope me-2"></i>Send us a message
+            </h5>
             <form id="contactForm" novalidate>
               <div class="mb-3">
                 <label class="form-label" for="name">Name</label>
@@ -485,7 +768,9 @@
               </div>
 
               <div class="d-flex gap-2">
-                <button type="submit" class="btn" style="background:var(--teal); color:#fff;">Send message</button>
+                <button type="submit" class="btn btn-teal">
+                  <i class="fas fa-paper-plane me-2"></i>Send message
+                </button>
                 <button type="reset" class="btn btn-outline-secondary">Reset</button>
               </div>
 
@@ -495,8 +780,10 @@
         </div>
 
         <div class="col-12 col-md-6">
-          <div class="p-3">
-            <h5 style="color:var(--teal);">Other ways to contact</h5>
+          <div class="p-4">
+            <h5 style="color:var(--teal);">
+              <i class="fas fa-address-book me-2"></i>Other ways to contact
+            </h5>
             <p class="mb-1"><i class="fa fa-phone me-2"></i> <a href="tel:+447905571515">07905 571515</a></p>
             <p class="mb-1"><i class="fa fa-envelope me-2"></i> <a href="mailto:dance@danceinchester.co.uk">dance@danceinchester.co.uk</a></p>
             <hr>
